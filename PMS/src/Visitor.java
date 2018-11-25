@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 public class Visitor {
 
-	private JFrame frame;
+	private JFrame frmPms;
 
 	/**
 	 * Launch the application.
@@ -14,7 +14,7 @@ public class Visitor {
 			public void run() {
 				try {
 					Visitor window = new Visitor();
-					window.frame.setVisible(true);
+					window.frmPms.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -33,9 +33,11 @@ public class Visitor {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmPms = new JFrame();
+		frmPms.setTitle("PMS");
+		frmPms.setBounds(100, 100, 450, 300);
+		frmPms.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmPms.getContentPane().setLayout(null);
 	}
 
 }

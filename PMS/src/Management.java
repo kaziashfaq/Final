@@ -6,25 +6,22 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.Vector;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class Management {
+public class Management implements Subject  {
 
 	private JFrame frmPms;
+	private Vector<Document> documents;
+	private Vector<Observer> buyers;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Management window = new Management();
-					window.frmPms.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	Management management = new Management();
+	management.frmPms.setVisible(true);
 	}
 
 	/**
@@ -54,6 +51,12 @@ public class Management {
 		frmPms.getContentPane().add(lblNewJgoodiesTitle);
 		
 		JButton operator = new JButton("Operator");
+		operator.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmPms.dispose();
+				Operator op = new Operator(documents);
+			}
+		});
 		operator.setBounds(184, 68, 89, 23);
 		frmPms.getContentPane().add(operator);
 		
@@ -65,4 +68,27 @@ public class Management {
 		visitor.setBounds(184, 138, 89, 23);
 		frmPms.getContentPane().add(visitor);
 	}
+
+	@Override
+	public void register(Observer o) {
+		// TODO Auto-generated method stub
+		buyers.add(o);
+	}
+
+	@Override
+	public void notifyAllBuyers() {
+		// TODO Auto-generated method stub
+		for(int i = 0; i < buyers.size(); i++){
+			Observer o = buyers.get(i);
+			o.update(documents);
+		}
+	}
+
+	@Override
+	public void remove(Observer o) {
+		// TODO Auto-generated method stub
+		buyers.remove(o);
+	}
+
+	
 }
