@@ -2,7 +2,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class Visitor {
+public class Visitor extends Buyer{
 
 	private JFrame frame;
 
@@ -38,4 +38,7 @@ public class Visitor {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	public void register() {
+		
+	}
 }

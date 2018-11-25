@@ -6,11 +6,13 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.Vector;
 
 public class Management {
 
 	private JFrame frmPms;
-
+	Vector<Document> docs;
+	Buyer buyer;
 	/**
 	 * Launch the application.
 	 */
@@ -65,4 +67,5 @@ public class Management {
 		visitor.setBounds(184, 138, 89, 23);
 		frmPms.getContentPane().add(visitor);
 	}
+
 }

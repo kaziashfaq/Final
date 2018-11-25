@@ -1,11 +1,13 @@
 import java.awt.EventQueue;
+import java.util.Vector;
 
 import javax.swing.JFrame;
 
-public class Operator {
+public class Operator implements MaintainDocs {
 
 	private JFrame frame;
-
+	Vector<Document> doc;
+	String name;
 	/**
 	 * Launch the application.
 	 */
@@ -37,5 +39,23 @@ public class Operator {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+
+	@Override
+	public void add(Document doc) {
+		
+	}
+
+	@Override
+	public void remove(Document doc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(Document doc) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
